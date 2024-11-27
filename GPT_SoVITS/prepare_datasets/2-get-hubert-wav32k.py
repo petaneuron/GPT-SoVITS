@@ -8,7 +8,7 @@ i_part=                             os.environ.get("i_part")
 all_parts=                          os.environ.get("all_parts")
 if "_CUDA_VISIBLE_DEVICES" in os.environ:
      os.environ["CUDA_VISIBLE_DEVICES"] = os.environ["_CUDA_VISIBLE_DEVICES"]
-from feature_extractor import cnhubert
+from GPT_SoVITS.feature_extractor import cnhubert
 opt_dir=                            os.environ.get("opt_dir")
 cnhubert.cnhubert_base_path=                os.environ.get("cnhubert_base_dir")
 import torch
