@@ -11,7 +11,7 @@ import torch.nn as nn
 
 import warnings
 warnings.filterwarnings("ignore")
-from bs_roformer.bs_roformer import BSRoformer
+from GPT_SoVITS.tools.uvr5.bs_roformer.bs_roformer import BSRoformer
 
 class BsRoformer_Loader:
     def get_model_from_config(self):

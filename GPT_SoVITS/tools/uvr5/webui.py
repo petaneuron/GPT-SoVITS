@@ -14,9 +14,9 @@ import sys
 
 import ffmpeg
 import torch
-from bsroformer import BsRoformer_Loader
-from mdxnet import MDXNetDereverb
-from vr import AudioPre, AudioPreDeEcho
+from GPT_SoVITS.tools.uvr5.bsroformer import BsRoformer_Loader
+from GPT_SoVITS.tools.uvr5.mdxnet import MDXNetDereverb
+from GPT_SoVITS.tools.uvr5.vr import AudioPre, AudioPreDeEcho
 
 try:
     import gradio.analytics as analytics
