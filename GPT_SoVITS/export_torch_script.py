@@ -2,8 +2,8 @@
 # reference: https://github.com/lifeiteng/vall-e
 import argparse
 from typing import Optional
-from my_utils import load_audio
-from text import cleaned_text_to_sequence
+from GPT_SoVITS.my_utils import load_audio
+from GPT_SoVITS.text import cleaned_text_to_sequence
 import torch
 import torchaudio
 
@@ -11,12 +11,12 @@ from torch import IntTensor, LongTensor, Tensor, nn
 from torch.nn import functional as F
 
 from transformers import AutoModelForMaskedLM, AutoTokenizer
-from feature_extractor import cnhubert
+from GPT_SoVITS.feature_extractor import cnhubert
 
-from AR.models.t2s_lightning_module import Text2SemanticLightningModule
-from module.models_onnx import SynthesizerTrn
+from GPT_SoVITS.AR.models.t2s_lightning_module import Text2SemanticLightningModule
+from GPT_SoVITS.module.models_onnx import SynthesizerTrn
 
-from inference_webui import get_phones_and_bert
+from GPT_SoVITS.inference_webui import get_phones_and_bert
 
 import os
 import soundfile
@@ -824,7 +824,7 @@ def main():
         export_bert_and_ssl=args.export_common_model,
     )
 
-import inference_webui
+from GPT_SoVITS import inference_webui
 if __name__ == "__main__":
     inference_webui.is_half=False
     inference_webui.dtype=torch.float32

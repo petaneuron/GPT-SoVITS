@@ -395,6 +395,12 @@ pyparsing==3.2.0
     # via matplotlib
 pypinyin==0.53.0
     # via gpt-sovits
+pyqt5==5.15.11
+    # via gpt-sovits
+pyqt5-qt5==5.15.15
+    # via pyqt5
+pyqt5-sip==12.15.0
+    # via pyqt5
 python-dateutil==2.9.0.post0
     # via matplotlib
     # via modelscope
