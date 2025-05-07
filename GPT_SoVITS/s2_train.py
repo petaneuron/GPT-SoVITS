@@ -2,8 +2,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 import os
-
-import utils
+from GPT_SoVITS import utils
 
 hps = utils.get_hparams(stage=2)
 os.environ["CUDA_VISIBLE_DEVICES"] = hps.train.gpu_numbers.replace("-", ",")
@@ -24,19 +23,19 @@ logging.getLogger("h5py").setLevel(logging.INFO)
 logging.getLogger("numba").setLevel(logging.INFO)
 from random import randint
 
-from module import commons
-from module.data_utils import (
+from GPT_SoVITS.module import commons
+from GPT_SoVITS.module.data_utils import (
     DistributedBucketSampler,
     TextAudioSpeakerCollate,
     TextAudioSpeakerLoader,
 )
-from module.losses import discriminator_loss, feature_loss, generator_loss, kl_loss
-from module.mel_processing import mel_spectrogram_torch, spec_to_mel_torch
-from module.models import (
+from GPT_SoVITS.module.losses import discriminator_loss, feature_loss, generator_loss, kl_loss
+from GPT_SoVITS.module.mel_processing import mel_spectrogram_torch, spec_to_mel_torch
+from GPT_SoVITS.module.models import (
     MultiPeriodDiscriminator,
     SynthesizerTrn,
 )
-from process_ckpt import savee
+from GPT_SoVITS.process_ckpt import savee
 
 torch.backends.cudnn.benchmark = False
 torch.backends.cudnn.deterministic = False

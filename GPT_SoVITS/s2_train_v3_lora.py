@@ -2,8 +2,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 import os
-
-import utils
+from GPT_SoVITS import utils
 
 hps = utils.get_hparams(stage=2)
 os.environ["CUDA_VISIBLE_DEVICES"] = hps.train.gpu_numbers.replace("-", ",")
@@ -24,8 +23,8 @@ logging.getLogger("numba").setLevel(logging.INFO)
 from collections import OrderedDict as od
 from random import randint
 
-from module import commons
-from module.data_utils import (
+from GPT_SoVITS.module import commons
+from GPT_SoVITS.module.data_utils import (
     DistributedBucketSampler,
     TextAudioSpeakerCollateV3,
     TextAudioSpeakerLoaderV3,
@@ -33,11 +32,11 @@ from module.data_utils import (
     TextAudioSpeakerLoaderV4,
 
 )
-from module.models import (
+from GPT_SoVITS.module.models import (
     SynthesizerTrnV3 as SynthesizerTrn,
 )
 from peft import LoraConfig, get_peft_model
-from process_ckpt import savee
+from GPT_SoVITS.process_ckpt import savee
 
 torch.backends.cudnn.benchmark = False
 torch.backends.cudnn.deterministic = False

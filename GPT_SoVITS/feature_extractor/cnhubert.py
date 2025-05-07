@@ -12,8 +12,7 @@ from transformers import (
     Wav2Vec2FeatureExtractor,
     HubertModel,
 )
-
-import utils
+from GPT_SoVITS import utils
 import torch.nn as nn
 
 cnhubert_base_path = None

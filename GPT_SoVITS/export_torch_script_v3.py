@@ -5,12 +5,12 @@ from export_torch_script import (
     resamplex,
     spectrogram_torch,
 )
-from f5_tts.model.backbones.dit import DiT
-from inference_webui import get_phones_and_bert
+from GPT_SoVITS.f5_tts.model.backbones.dit import DiT
+from GPT_SoVITS.inference_webui import get_phones_and_bert
 import librosa
-from module import commons
-from module.mel_processing import mel_spectrogram_torch
-from module.models_onnx import CFM, SynthesizerTrnV3
+from GPT_SoVITS.module import commons
+from GPT_SoVITS.module.mel_processing import mel_spectrogram_torch
+from GPT_SoVITS.module.models_onnx import CFM, SynthesizerTrnV3
 import numpy as np
 import torch._dynamo.config
 import torchaudio
@@ -21,7 +21,7 @@ import soundfile
 from librosa.filters import mel as librosa_mel_fn
 
 
-from inference_webui import get_spepc, norm_spec, resample, ssl_model
+from GPT_SoVITS.inference_webui import get_spepc, norm_spec, resample, ssl_model
 
 logging.config.dictConfig(uvicorn.config.LOGGING_CONFIG)
 logger = logging.getLogger("uvicorn")
@@ -346,7 +346,7 @@ class GPTSoVITSV3(torch.nn.Module):
 
 def init_bigvgan():
     global bigvgan_model
-    from BigVGAN import bigvgan
+    from GPT_SoVITS.BigVGAN import bigvgan
 
     bigvgan_model = bigvgan.BigVGAN.from_pretrained(
         "%s/GPT_SoVITS/pretrained_models/models--nvidia--bigvgan_v2_24khz_100band_256x" % (now_dir,),
@@ -397,7 +397,7 @@ class DictToAttrRecursive(dict):
             raise AttributeError(f"Attribute {item} not found")
 
 
-from process_ckpt import get_sovits_version_from_path_fast, load_sovits_new
+from GPT_SoVITS.process_ckpt import get_sovits_version_from_path_fast, load_sovits_new
 
 
 def get_sovits_weights(sovits_path):

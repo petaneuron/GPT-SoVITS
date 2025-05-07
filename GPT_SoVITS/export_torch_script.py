@@ -10,12 +10,12 @@ from torch import IntTensor, LongTensor, Tensor, nn
 from torch.nn import functional as F
 
 from transformers import AutoModelForMaskedLM, AutoTokenizer
-from feature_extractor import cnhubert
+from GPT_SoVITS.feature_extractor import cnhubert
 
-from AR.models.t2s_lightning_module import Text2SemanticLightningModule
-from module.models_onnx import SynthesizerTrn
+from GPT_SoVITS.AR.models.t2s_lightning_module import Text2SemanticLightningModule
+from GPT_SoVITS.module.models_onnx import SynthesizerTrn
 
-from inference_webui import get_phones_and_bert
+from GPT_SoVITS.inference_webui import get_phones_and_bert
 
 import os
 import soundfile
@@ -815,7 +815,7 @@ def test():
     soundfile.write("out.wav", audio.detach().cpu().numpy(), 32000)
 
 
-import text
+from GPT_SoVITS import text
 import json
 
 
@@ -852,7 +852,7 @@ def main():
     )
 
 
-import inference_webui
+from GPT_SoVITS import inference_webui
 
 if __name__ == "__main__":
     inference_webui.is_half = False

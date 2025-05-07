@@ -35,12 +35,12 @@ import sys
 now_dir = os.getcwd()
 sys.path.append(now_dir)
 import logging
-import utils
+from GPT_SoVITS import utils
 
 if version != "v3":
-    from module.models import SynthesizerTrn
+    from GPT_SoVITS.module.models import SynthesizerTrn
 else:
-    from module.models import SynthesizerTrnV3 as SynthesizerTrn
+    from GPT_SoVITS.module.models import SynthesizerTrnV3 as SynthesizerTrn
 from tools.my_utils import clean_path
 
 logging.getLogger("numba").setLevel(logging.WARNING)
