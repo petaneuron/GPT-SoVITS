@@ -1334,7 +1334,7 @@ requires-dist = [
     { name = "tensorboard", specifier = ">=2.19.0" },
     { name = "tojyutping", specifier = ">=3.2.0" },
     { name = "tokenizers", specifier = ">=0.13,<1" },
-    { name = "torchaudio", specifier = "==2.6.0" },
+    { name = "torchaudio", specifier = ">=2.6.0" },
     { name = "torchmetrics", specifier = "<=1.5" },
     { name = "tqdm", specifier = ">=4.67.1" },
     { name = "transformers", specifier = ">=4.43" },

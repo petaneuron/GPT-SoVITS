@@ -44,7 +44,7 @@ dependencies = [
     "tensorboard>=2.19.0",
     "tojyutping>=3.2.0",
     "tokenizers>=0.13,<1",
-    "torchaudio==2.6.0",
+    "torchaudio>=2.6.0",
     "torchmetrics<=1.5",
     "tqdm>=4.67.1",
     "transformers>=4.43",
