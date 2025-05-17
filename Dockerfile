@@ -1,5 +1,6 @@
 # Base CUDA image
-FROM cnstark/pytorch:2.0.1-py3.9.17-cuda11.8.0-ubuntu20.04
+# FROM cnstark/pytorch:2.0.1-py3.9.17-cuda11.8.0-ubuntu20.04
+FROM pytorch/pytorch:2.7.0-cuda12.8-cudnn9-runtime
 
 LABEL maintainer="breakstring@hotmail.com"
 LABEL version="dev-20240209"
