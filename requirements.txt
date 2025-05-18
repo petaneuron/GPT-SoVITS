@@ -15,7 +15,7 @@ pypinyin
 pyopenjtalk>=0.4.1
 g2p_en
 torchaudio
-modelscope==1.10.0
+modelscope<=1.26.0
 sentencepiece
 transformers>=4.43
 peft

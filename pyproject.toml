@@ -22,7 +22,7 @@ dependencies = [
     "jieba-fast>=0.53",
     "ko-pron>=1.3",
     "librosa==0.10.2",
-    "modelscope==1.10.0",
+    "modelscope<=1.26.0",
     "numba>=0.61.2",
     "numpy<2.0",
     "onnxruntime>=1.21.1 ; sys_platform == 'darwin'",

@@ -11,7 +11,8 @@ LABEL description="Docker image for GPT-SoVITS"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends tzdata ffmpeg libsox-dev parallel aria2 git git-lfs && \
+    apt-get install -y --no-install-recommends build-essential cmake \
+        tzdata ffmpeg libsox-dev parallel aria2 git git-lfs && \
     git lfs install && \
     rm -rf /var/lib/apt/lists/*
 
@@ -38,6 +39,7 @@ RUN if [ "$IMAGE_TYPE" != "elite" ]; then \
 # Copy the rest of the application
 COPY . /workspace
 
-EXPOSE 9871 9872 9873 9874 9880
+# EXPOSE 9871 9872 9873 9874 9880
+EXPOSE 9880
 
-CMD ["python", "webui.py"]
+CMD ["python", "api_v2.py", "-a", "0.0.0.0"]
